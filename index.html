@@ -3,129 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rules & Regulations – Coding Contest</title>
-    <!-- Tailwind CSS via CDN -->
+    <title>HackerRank Contest Rules</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom font family for Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
 </head>
-<body class="bg-gradient-to-b from-blue-50 to-gray-100 min-h-screen font-sans">
-    <div class="container mx-auto px-4 py-8 md:py-12">
-        <!-- Header -->
-        <header class="text-center mb-10 md:mb-14">
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-800 mb-3 tracking-tight">Rules & Regulations</h1>
-            <p class="text-lg md:text-xl text-gray-600 mb-4">HackerRank Coding Contest</p>
-            <div class="h-1 w-24 bg-blue-600 mx-auto"></div>
+<body class="bg-gradient-to-br from-blue-50 to-gray-100 min-h-screen flex flex-col items-center justify-center p-4">
+
+    <div class="max-w-3xl w-full bg-white rounded-xl shadow-2xl p-8 md:p-12 mb-8 transform transition-all duration-300 hover:scale-[1.01]">
+        <!-- Header Section -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-2 leading-tight">
+                Rules & Regulations – Coding Contest
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600">
+                Organized by DEPSTAR Coding Team, CHARUSAT
+            </p>
         </header>
 
-        <!-- Main Content -->
-        <main>
-            <div class="bg-white shadow-xl rounded-xl overflow-hidden max-w-3xl mx-auto transform transition-all hover:shadow-2xl duration-300">
-                <div class="p-6 md:p-10">
-                    <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-8 flex items-center">
-                        <i class="fas fa-code text-blue-600 mr-3"></i>Contest Guidelines
-                    </h2>
-                    
-                    <ul class="space-y-6">
-                        <li class="flex items-start hover:bg-blue-50 p-3 rounded-lg transition-colors duration-200">
-                            <div class="mr-4 text-blue-600 flex-shrink-0 mt-1">
-                                <i class="fas fa-user-plus text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-medium text-blue-700 text-lg mb-1">Registration</h3>
-                                <p class="text-gray-700">Register before the contest begins.</p>
-                            </div>
-                        </li>
-                        
-                        <li class="flex items-start hover:bg-blue-50 p-3 rounded-lg transition-colors duration-200">
-                            <div class="mr-4 text-blue-600 flex-shrink-0 mt-1">
-                                <i class="fas fa-laptop-code text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-medium text-blue-700 text-lg mb-1">Platform</h3>
-                                <p class="text-gray-700">Contest is hosted on HackerRank.</p>
-                            </div>
-                        </li>
-                        
-                        <li class="flex items-start hover:bg-blue-50 p-3 rounded-lg transition-colors duration-200">
-                            <div class="mr-4 text-blue-600 flex-shrink-0 mt-1">
-                                <i class="fas fa-hourglass-half text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-medium text-blue-700 text-lg mb-1">Duration</h3>
-                                <p class="text-gray-700">90 minutes from the announced start time.</p>
-                            </div>
-                        </li>
-                        
-                        <li class="flex items-start hover:bg-blue-50 p-3 rounded-lg transition-colors duration-200">
-                            <div class="mr-4 text-blue-600 flex-shrink-0 mt-1">
-                                <i class="fas fa-shield-alt text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-medium text-blue-700 text-lg mb-1">Academic Integrity</h3>
-                                <p class="text-gray-700">No plagiarism – duplicate code leads to disqualification.</p>
-                            </div>
-                        </li>
-                        
-                        <li class="flex items-start hover:bg-blue-50 p-3 rounded-lg transition-colors duration-200">
-                            <div class="mr-4 text-blue-600 flex-shrink-0 mt-1">
-                                <i class="fas fa-code-branch text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-medium text-blue-700 text-lg mb-1">Programming Language</h3>
-                                <p class="text-gray-700">Use any language available on HackerRank.</p>
-                            </div>
-                        </li>
-                        
-                        <li class="flex items-start hover:bg-blue-50 p-3 rounded-lg transition-colors duration-200">
-                            <div class="mr-4 text-blue-600 flex-shrink-0 mt-1">
-                                <i class="fas fa-award text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-medium text-blue-700 text-lg mb-1">Rewards</h3>
-                                <p class="text-gray-700">Top 3 participants receive certificates.</p>
-                            </div>
-                        </li>
-                        
-                        <li class="flex items-start hover:bg-blue-50 p-3 rounded-lg transition-colors duration-200">
-                            <div class="mr-4 text-blue-600 flex-shrink-0 mt-1">
-                                <i class="fas fa-gavel text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-medium text-blue-700 text-lg mb-1">Decision Authority</h3>
-                                <p class="text-gray-700">Organizer's decision will be final.</p>
-                            </div>
-                        </li>
-                    </ul>
+        <!-- Rules Section -->
+        <section class="mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">
+                <span class="inline-block mr-2">📜</span>Important Guidelines
+            </h2>
+            <ol class="list-decimal list-inside space-y-4 text-gray-700 text-base md:text-lg pl-4">
+                <li class="p-3 bg-gray-50 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-200 flex items-start">
+                    <span class="mr-2 text-blue-500 font-semibold">1.</span>
+                    <p>
+                        <span class="font-semibold">Registration is Mandatory:</span> Participants must register through the provided link before the contest officially begins.
+                    </p>
+                </li>
+                <li class="p-3 bg-gray-50 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-200 flex items-start">
+                    <span class="mr-2 text-blue-500 font-semibold">2.</span>
+                    <p>
+                        <span class="font-semibold">Platform:</span> The contest will be conducted exclusively on the HackerRank platform. Ensure you have a working HackerRank account.
+                    </p>
+                </li>
+                <li class="p-3 bg-gray-50 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-200 flex items-start">
+                    <span class="mr-2 text-blue-500 font-semibold">3.</span>
+                    <p>
+                        <span class="font-semibold">Duration:</span> The contest will last for <span class="text-red-600 font-bold">90 minutes</span> from its scheduled start time.
+                    </p>
+                </li>
+                <li class="p-3 bg-gray-50 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-200 flex items-start">
+                    <span class="mr-2 text-blue-500 font-semibold">4.</span>
+                    <p>
+                        <span class="font-semibold">Strict No Plagiarism Policy:</span> Any form of plagiarism or duplicate code will lead to immediate disqualification. Fair play is paramount. <span class="ml-1">🚫</span>
+                    </p>
+                </li>
+                <li class="p-3 bg-gray-50 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-200 flex items-start">
+                    <span class="mr-2 text-blue-500 font-semibold">5.</span>
+                    <p>
+                        <span class="font-semibold">Programming Languages:</span> Participants are free to use any programming language available on the HackerRank platform.
+                    </p>
+                </li>
+                <li class="p-3 bg-gray-50 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-200 flex items-start">
+                    <span class="mr-2 text-blue-500 font-semibold">6.</span>
+                    <p>
+                        <span class="font-semibold">Certificates:</span> The top 3 participants will be awarded certificates of achievement. <span class="ml-1">🏆</span>
+                    </p>
+                </li>
+                <li class="p-3 bg-gray-50 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-200 flex items-start">
+                    <span class="mr-2 text-blue-500 font-semibold">7.</span>
+                    <p>
+                        <span class="font-semibold">Organizer's Decision:</span> The decision of the contest organizers will be final and binding in all matters.
+                    </p>
+                </li>
+            </ol>
+        </section>
 
-                    <div class="mt-10 p-5 bg-blue-50 rounded-lg border-l-4 border-blue-500">
-                        <p class="text-blue-800 flex items-center">
-                            <i class="fas fa-info-circle mr-3 text-xl"></i>
-                            <span>
-                                <span class="font-bold">Note:</span> All participants are expected to adhere to these rules. 
-                                Any violation may result in disqualification.
-                            </span>
-                        </p>
-                    </div>
-                    
-                    <!-- Call to action -->
-                    <div class="mt-10 text-center">
-                        <p class="text-lg font-medium text-blue-700">
-                            <i class="fas fa-rocket mr-2"></i>Let the coding begin!
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <!-- Footer -->
-        <footer class="text-center mt-12 mb-6">
-            <p class="text-gray-600 flex flex-col md:flex-row justify-center items-center">
-                <span class="mb-2 md:mb-0">Organized by</span>
-                <span class="font-semibold md:ml-2 text-blue-700">DEPSTAR Coding Team, CHARUSAT</span>
+        <!-- Call to Action -->
+        <div class="text-center mt-8">
+            <p class="text-xl md:text-2xl font-bold text-blue-700 animate-pulse">
+                All the best! Let the coding begin! ✨
             </p>
-           
-        </footer>
+        </div>
     </div>
+
+  
+
 </body>
 </html>
