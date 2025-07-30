@@ -1,341 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HackerRank Contest Rules</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      /* Custom font family for Inter */
-      body {
-        font-family: "Inter", sans-serif;
-        overflow-x: hidden; /* Prevent horizontal scroll due to canvas */
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HackerRank Contest Rules</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <style>
+    /* Custom font family for Inter */
+    body {
+      font-family: "Inter", sans-serif;
+      overflow-x: hidden;
+      /* Prevent horizontal scroll due to canvas */
+    }
+
+    /* Custom animation for subtle glow */
+    @keyframes glow-pulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 5px rgba(124, 58, 237, 0.4),
+          0 0 10px rgba(236, 72, 153, 0.3);
       }
 
-      /* Define pulse animation for more subtle effect if needed, though Tailwind's animate-pulse is good */
-      @keyframes subtle-pulse {
-        0%,
-        100% {
-          transform: scale(1);
-          opacity: 1;
-        }
-        50% {
-          transform: scale(1.01);
-          opacity: 0.95;
-        }
+      50% {
+        box-shadow: 0 0 15px rgba(124, 58, 237, 0.8),
+          0 0 25px rgba(236, 72, 153, 0.6);
       }
-      .animate-subtle-pulse {
-        animation: subtle-pulse 2s infinite ease-in-out;
-      }
+    }
 
-      /* Canvas styling for the cracker animation - positioned relative to its parent container */
-      #crackerCanvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%; /* Fill the parent div */
-        pointer-events: none; /* Allows clicks to pass through to elements below */
-        z-index: 1; /* Ensure it's above the parent's background but below the text */
-      }
-    </style>
-  </head>
-  <body
-    class="bg-gradient-to-br from-blue-50 to-gray-100 min-h-screen flex flex-col items-center p-4 relative"
-  >
+    .animate-glow-pulse {
+      animation: glow-pulse 3s infinite ease-in-out;
+    }
+
+    /* Canvas styling for the cracker animation - positioned relative to its parent container */
+    #crackerCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* Fill the parent div */
+      pointer-events: none;
+      /* Allows clicks to pass through to elements below */
+      z-index: 1;
+      /* Ensure it's above the parent's background but below the text */
+    }
+
+    /* All sprite-related CSS is removed as we are now using individual images */
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-indigo-50 to-purple-100 min-h-screen flex flex-col items-center relative">
+  <div
+    class="w-full bg-gray-50 py-4 md:py-6 border-b border-gray-200 shadow-sm flex flex-wrap justify-center items-center gap-4 md:gap-8 lg:gap-12 px-4">
+    <img src="./1.png" alt="Logo 1" class="h-16 md:h-20 object-contain flex-grow-0 flex-shrink-0" />
+    <img src="./2.png" alt="Logo 2" class="h-16 md:h-20 object-contain flex-grow-0 flex-shrink-0" />
+    <img src="./3.png" alt="Logo 3" class="h-16 md:h-20 object-contain flex-grow-0 flex-shrink-0" />
+    <img src="./5.png" alt="Logo 4" class="h-16 md:h-20 object-contain flex-grow-0 flex-shrink-0" />
+    <img src="./4.png" alt="Logo 5" class="h-16 md:h-20 object-contain flex-grow-0 flex-shrink-0" />
+  </div>
+
+  <div
+    class="max-w-4xl w-full bg-white rounded-2xl shadow-xl p-8 md:p-12 mt-8 mb-12 transform transition-all duration-300 hover:scale-[1.005] z-20 relative overflow-hidden">
     <div
-      class="max-w-3xl w-full bg-white rounded-xl shadow-2xl p-8 md:p-12 mb-8 transform transition-all duration-300 hover:scale-[1.01] z-20 relative"
-    >
-      <!-- Celebratory Section - Now contains the canvas -->
-      <div
-        class="text-center my-8 p-6 rounded-xl shadow-lg bg-gradient-to-r from-purple-500 to-pink-500 animate-subtle-pulse relative overflow-hidden"
-      >
-        <canvas id="crackerCanvas"></canvas>
-        <!-- Moved canvas here -->
-        <p
-          class="text-white text-2xl md:text-3xl font-extrabold leading-tight relative z-10"
-        >
-          🎉 Top 3 Performers Will Receive Exciting Rewards! 🏆
+      class="text-center my-8 p-6 md:p-8 rounded-xl shadow-lg bg-gradient-to-r from-purple-600 to-pink-500 animate-glow-pulse relative overflow-hidden">
+      <canvas id="crackerCanvas"></canvas>
+      <p
+        class="text-white text-2xl md:text-4xl font-extrabold leading-tight tracking-wide relative z-10 drop-shadow-md">
+        <span class="mr-2">🎉</span>Top 3 Performers Will Receive Exciting
+        Rewards!<span class="ml-2">🏆</span>
+      </p>
+    </div>
+
+    <header class="text-center mb-10">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-4 leading-tight">
+        Rules & Regulations
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-500">– Coding Contest</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-600 font-medium">
+        Organized by <span class="text-blue-700">DEPSTAR Coding Team</span>,
+        CHARUSAT
+      </p>
+    </header>
+
+    <section class="mb-10">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-center flex items-center justify-center">
+        <span class="text-indigo-500 text-4xl mr-3">💡</span>Important
+        Guidelines
+      </h2>
+      <ol class="list-decimal list-inside space-y-5 text-gray-700 text-base md:text-lg pl-4">
+        <li
+          class="p-4 bg-gray-50 rounded-lg shadow-sm hover:bg-indigo-50 transition-colors duration-200 flex items-start group">
+          <span
+            class="mr-3 text-indigo-600 font-extrabold text-xl group-hover:text-indigo-800 transition-colors">1.</span>
+          <p>
+            <span class="font-bold text-gray-800">Registration is Mandatory:</span>
+            Participants must register through the provided link using their
+            <span class="text-blue-700 font-semibold">college email ID only</span>
+            before the contest officially begins.
+          </p>
+        </li>
+        <li
+          class="p-4 bg-gray-50 rounded-lg shadow-sm hover:bg-indigo-50 transition-colors duration-200 flex items-start group">
+          <span
+            class="mr-3 text-indigo-600 font-extrabold text-xl group-hover:text-indigo-800 transition-colors">2.</span>
+          <p>
+            <span class="font-bold text-gray-800">Platform:</span> The
+            contest will be conducted exclusively on the
+            <span class="font-semibold text-green-600">HackerRank platform</span>. Ensure you have a working college
+            account.
+          </p>
+        </li>
+        <li
+          class="p-4 bg-gray-50 rounded-lg shadow-sm hover:bg-indigo-50 transition-colors duration-200 flex items-start group">
+          <span
+            class="mr-3 text-indigo-600 font-extrabold text-xl group-hover:text-indigo-800 transition-colors">3.</span>
+          <p>
+            <span class="font-bold text-gray-800">Duration:</span> The
+            contest will start at
+            <span class="text-red-600 font-extrabold">9:00 AM</span> and
+            will end at
+            <span class="text-red-600 font-extrabold">12:00 AM (midnight)</span>.
+          </p>
+        </li>
+        <li
+          class="p-4 bg-gray-50 rounded-lg shadow-sm hover:bg-indigo-50 transition-colors duration-200 flex items-start group">
+          <span
+            class="mr-3 text-indigo-600 font-extrabold text-xl group-hover:text-indigo-800 transition-colors">4.</span>
+          <p>
+            <span class="font-bold text-gray-800">Strict No Plagiarism Policy:</span>
+            Any form of plagiarism or duplicate code will lead to immediate
+            disqualification. Fair play is paramount.
+            <span class="ml-2 text-xl">🚫</span>
+          </p>
+        </li>
+        <li
+          class="p-4 bg-gray-50 rounded-lg shadow-sm hover:bg-indigo-50 transition-colors duration-200 flex items-start group">
+          <span
+            class="mr-3 text-indigo-600 font-extrabold text-xl group-hover:text-indigo-800 transition-colors">5.</span>
+          <p>
+            <span class="font-bold text-gray-800">Programming Languages:</span>
+            Participants are free to use any programming language available on
+            the HackerRank platform.
+          </p>
+        </li>
+        <li
+          class="p-4 bg-gray-50 rounded-lg shadow-sm hover:bg-indigo-50 transition-colors duration-200 flex items-start group">
+          <span
+            class="mr-3 text-indigo-600 font-extrabold text-xl group-hover:text-indigo-800 transition-colors">6.</span>
+          <p>
+            <span class="font-bold text-gray-800">Certificates:</span> The top 10
+            participants will be awarded certificates of achievement.
+          </p>
+        </li>
+        <li
+          class="p-4 bg-gray-50 rounded-lg shadow-sm hover:bg-indigo-50 transition-colors duration-200 flex items-start group">
+          <span
+            class="mr-3 text-indigo-600 font-extrabold text-xl group-hover:text-indigo-800 transition-colors">7.</span>
+          <p>
+            <span class="font-bold text-gray-800">Final Decision:</span>
+            All decisions made by the contest committee shall be deemed final, conclusive, and non-negotiable.
+          </p>
+
+        </li>
+      </ol>
+
+      <div class="mt-10 p-6 border-l-4 border-purple-600 bg-purple-50 rounded-lg shadow-md">
+        <h3 class="text-xl font-bold text-purple-800 mb-3 flex items-center">
+          <span class="mr-2 text-2xl">📅</span>Monthly Contests & Final
+          Selection
+        </h3>
+        <p class="text-gray-800 text-base md:text-lg leading-relaxed">
+          Two contests will be held every month on
+          <span class="font-extrabold text-purple-700">Wednesdays</span>. At
+          the end of the semester, the top 10 participants will be
+          shortlisted and invited to participate in a
+          <span class="font-extrabold text-purple-700">Final Offline Contest</span>. From this final contest, the top 3
+          performers will be selected
+          and awarded with exciting rewards and recognition.
+          <span class="text-xl ml-1">🏆🎯</span>
         </p>
       </div>
+    </section>
 
-      <!-- Header Section -->
-      <header class="text-center mb-8">
-        <h1
-          class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-2 leading-tight"
-        >
-          Rules & Regulations – Coding Contest
-        </h1>
-        <p class="text-lg md:text-xl text-gray-600">
-          Organized by DEPSTAR Coding Team, CHARUSAT
+    <div class="text-center mt-10">
+      <p class="text-2xl md:text-3xl font-extrabold text-teal-600 animate-pulse">
+        All the best! Let the coding begin! ✨
+      </p>
+    </div>
+  </div>
+
+  <footer
+    class="w-full text-center py-8 bg-gray-900 text-gray-300 text-sm md:text-base mt-auto rounded-t-xl shadow-inner">
+    <div class="mb-6">
+      <p class="font-bold text-xl mb-3 text-white">Contact for Any Queries</p>
+      <div class="space-y-2">
+        <p>
+          Darshan Hotchandani -
+          <a href="tel:+918490904729" class="text-blue-400 hover:text-blue-300 transition-colors duration-200">
+            +91 84909 04729
+          </a>
         </p>
-      </header>
-
-      <!-- Rules Section -->
-      <section class="mb-8">
-        <h2
-          class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center"
-        >
-          <span class="inline-block mr-2">📜</span>Important Guidelines
-        </h2>
-        <ol
-          class="list-decimal list-inside space-y-4 text-gray-700 text-base md:text-lg pl-4"
-        >
-          <li
-            class="p-3 bg-gray-50 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-200 flex items-start"
-          >
-            <span class="mr-2 text-blue-500 font-semibold">1.</span>
-            <p>
-              <span class="font-semibold">Registration is Mandatory:</span>
-              Participants must register through the provided link using their
-              <span class="text-blue-600 font-semibold"
-                >college email ID only</span
-              >
-              before the contest officially begins.
-            </p>
-          </li>
-          <li
-            class="p-3 bg-gray-50 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-200 flex items-start"
-          >
-            <span class="mr-2 text-blue-500 font-semibold">2.</span>
-            <p>
-              <span class="font-semibold">Platform:</span> The contest will be
-              conducted exclusively on the HackerRank platform. Ensure you have
-              a working HackerRank account.
-            </p>
-          </li>
-          <li
-            class="p-3 bg-gray-50 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-200 flex items-start"
-          >
-            <span class="mr-2 text-blue-500 font-semibold">3.</span>
-            <p>
-              <span class="font-semibold">Duration:</span> The contest will
-              start at <span class="text-red-600 font-bold">9:00 AM</span> and
-              will end at
-              <span class="text-red-600 font-bold">12:00 AM (midnight)</span>.
-            </p>
-          </li>
-          <li
-            class="p-3 bg-gray-50 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-200 flex items-start"
-          >
-            <span class="mr-2 text-blue-500 font-semibold">4.</span>
-            <p>
-              <span class="font-semibold">Strict No Plagiarism Policy:</span>
-              Any form of plagiarism or duplicate code will lead to immediate
-              disqualification. Fair play is paramount.
-              <span class="ml-1">🚫</span>
-            </p>
-          </li>
-          <li
-            class="p-3 bg-gray-50 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-200 flex items-start"
-          >
-            <span class="mr-2 text-blue-500 font-semibold">5.</span>
-            <p>
-              <span class="font-semibold">Programming Languages:</span>
-              Participants are free to use any programming language available on
-              the HackerRank platform.
-            </p>
-          </li>
-          <li
-            class="p-3 bg-gray-50 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-200 flex items-start"
-          >
-            <span class="mr-2 text-blue-500 font-semibold">6.</span>
-            <p>
-              <span class="font-semibold">Certificates:</span> The top 3
-              participants will be awarded certificates of achievement.
-              <span class="ml-1">🏆</span>
-            </p>
-          </li>
-          <li
-            class="p-3 bg-gray-50 rounded-lg shadow-sm hover:bg-blue-50 transition-colors duration-200 flex items-start"
-          >
-            <span class="mr-2 text-blue-500 font-semibold">7.</span>
-            <p>
-              <span class="font-semibold">Decision of the Committee:</span> The
-              decision of the contest committee will be final and binding in all
-              matters.
-            </p>
-          </li>
-        </ol>
-
-        <!-- Highlighted Final Note -->
-        <div
-          class="mt-8 p-5 border-l-4 border-blue-600 bg-blue-50 rounded-lg shadow"
-        >
-          <h3 class="text-xl font-semibold text-blue-800 mb-2">
-            📅 Monthly Contests & Final Selection
-          </h3>
-          <p class="text-gray-800 text-base md:text-lg leading-relaxed">
-            Two contests will be held every month on
-            <span class="font-semibold text-blue-700">Wednesdays</span>. At the
-            end of the semester, the top 10 participants will be shortlisted and
-            invited to participate in a
-            <span class="font-semibold text-blue-700"
-              >Final Offline Contest</span
-            >. From this final contest, the top 3 performers will be selected
-            and awarded with exciting rewards and recognition. 🏆🎯
-          </p>
-        </div>
-      </section>
-
-      <!-- Call to Action -->
-      <div class="text-center mt-8">
-        <p class="text-xl md:text-2xl font-bold text-blue-700 animate-pulse">
-          All the best! Let the coding begin! ✨
+        <p>
+          Divy Kalathiya -
+          <a href="tel:+916359348149" class="text-blue-400 hover:text-blue-300 transition-colors duration-200">
+            +91 6359 348 149
+          </a>
         </p>
       </div>
     </div>
 
-    <!-- Footer Section - Updated UI -->
-    <footer
-      class="w-full text-center py-6 bg-gray-800 text-gray-300 text-sm md:text-base mt-8 rounded-t-lg shadow-inner"
-    >
-      <p class="mb-2 font-semibold">📩 Contact for any query:</p>
-      <div class="space-y-1">
-        <p>
-          Darshan Hotchandani -
-          <a
-            href="tel:+918490904729"
-            class="text-blue-400 hover:text-blue-300 transition-colors duration-200"
-            >+91 84909 04729</a
-          >
-        </p>
-        <p>
-          Divy Kalathiya -
-          <a
-            href="tel:+916359348149"
-            class="text-blue-400 hover:text-blue-300 transition-colors duration-200"
-            >+91 6359 348 149</a
-          >
-        </p>
-        <p>
-          Harsh Dhameliya -
-          <a
-            href="tel:+919173625108"
-            class="text-blue-400 hover:text-blue-300 transition-colors duration-200"
-            >+91 91736 25108</a
-          >
-        </p>
-        <p>
-          Vinit Sachpara -
-          <a
-            href="tel:+918238300674"
-            class="text-blue-400 hover:text-blue-300 transition-colors duration-200"
-            >+91 82383 00674</a
-          >
-        </p>
-      </div>
-    </footer>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const canvas = document.getElementById("crackerCanvas");
-        const ctx = canvas.getContext("2d");
-        let particles = [];
-        const colors = [
-          "#FFC300",
-          "#FF5733",
-          "#C70039",
-          "#900C3F",
-          "#581845",
-          "#DAF7A6",
-          "#FFC0CB",
-        ]; // Festive colors
+    <div class="mb-6">
+      <p class="font-bold text-xl mb-3 text-white">Core Team</p>
+      <ul
+        class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 text-left max-w-5xl mx-auto list-disc list-inside px-4">
+        <li>Darshan</li>
+        <li>Divy Kalathiya</li>
+        <li>Harsh Dhameliya</li>
+        <li>Vinit Saspara</li>
+        <li>Aryan Sangani</li>
+        <li>Vaibhav Tandel</li>
+        <li>Ansh Singh</li>
+        <li>Spandan Malviya</li>
+        <li>Akshit Vaghasiya</li>
+        <li>Harsh Ladva</li>
+      </ul>
+    </div>
 
-        // Set canvas dimensions
-        function resizeCanvas() {
-          // Canvas dimensions now match its parent container
-          canvas.width = canvas.parentElement.clientWidth;
-          canvas.height = canvas.parentElement.clientHeight;
-        }
-        // Listen for window resize and also for parent element resize (if possible, though window is usually enough)
-        window.addEventListener("resize", resizeCanvas);
-        // Initial resize after DOM content is loaded and parent dimensions are available
-        setTimeout(resizeCanvas, 0);
+    <div>
+      <p class="font-bold text-xl mb-2 text-white">Organized By</p>
+      <p>
+        Faculty:
+        <span class="font-semibold text-gray-100">Mr. Sachin Patel</span>
+      </p>
+      <p>
+        Head of Department:
+        <span class="font-semibold text-gray-100">Dr. Dweepna Garg</span>
+      </p>
+    </div>
 
-        // Particle class
-        class Particle {
-          constructor(x, y, color) {
-            this.x = x;
-            this.y = y;
-            this.color = color;
-            this.radius = Math.random() * 3 + 2; // Increased particle size
-            this.velocity = {
-              x: (Math.random() - 0.5) * 6, // Increased horizontal velocity
-              y: (Math.random() - 0.5) * 6, // Increased vertical velocity
-            };
-            this.alpha = 1; // Opacity
-            this.friction = 0.97; // Slightly less friction for longer trails
-            this.gravity = 0.08; // Slightly more gravity
-          }
+  </footer>
 
-          draw() {
-            ctx.save();
-            ctx.globalAlpha = this.alpha;
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-            ctx.fillStyle = this.color;
-            ctx.fill();
-            ctx.restore();
-          }
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const canvas = document.getElementById("crackerCanvas");
+      const ctx = canvas.getContext("2d");
+      let particles = [];
+      const colors = [
+        "#FFD700", // Gold
+        "#FF6347", // Tomato
+        "#9370DB", // MediumPurple
+        "#3CB371", // MediumSeaGreen
+        "#FFB6C1", // LightPink
+        "#4682B4", // SteelBlue
+        "#ADFF2F", // GreenYellow
+      ]; // More refined festive colors
 
-          update() {
-            this.velocity.x *= this.friction;
-            this.velocity.y *= this.friction;
-            this.velocity.y += this.gravity; // Apply gravity
+      // Set canvas dimensions
+      function resizeCanvas() {
+        canvas.width = canvas.parentElement.clientWidth;
+        canvas.height = canvas.parentElement.clientHeight;
+      }
 
-            this.x += this.velocity.x;
-            this.y += this.velocity.y;
-            this.alpha -= 0.008; // Fade out slower
-          }
+      window.addEventListener("resize", resizeCanvas);
+      // Initial resize after DOM content is loaded
+      setTimeout(resizeCanvas, 0);
+
+      // Particle class
+      class Particle {
+        constructor(x, y, color) {
+          this.x = x;
+          this.y = y;
+          this.color = color;
+          this.radius = Math.random() * 2 + 1; // Slightly smaller particles
+          this.velocity = {
+            x: (Math.random() - 0.5) * 5, // Adjusted velocity
+            y: (Math.random() - 0.5) * 5, // Adjusted velocity
+          };
+          this.alpha = 1; // Opacity
+          this.friction = 0.98; // Slightly more friction for quicker fade
+          this.gravity = 0.05; // Less gravity
         }
 
-        // Function to create an explosion (cracker burn)
-        function createExplosion(x, y, particleCount = 80) {
-          // Increased particle count
-          for (let i = 0; i < particleCount; i++) {
-            const color = colors[Math.floor(Math.random() * colors.length)];
-            particles.push(new Particle(x, y, color));
-          }
+        draw() {
+          ctx.save();
+          ctx.globalAlpha = this.alpha;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+          ctx.fillStyle = this.color;
+          ctx.fill();
+          ctx.restore();
         }
 
-        // Animation loop
-        function animate() {
-          requestAnimationFrame(animate);
-          ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+        update() {
+          this.velocity.x *= this.friction;
+          this.velocity.y *= this.friction;
+          this.velocity.y += this.gravity;
 
-          for (let i = particles.length - 1; i >= 0; i--) {
-            const particle = particles[i];
-            particle.update();
-            particle.draw();
-
-            // Remove faded particles
-            if (particle.alpha <= 0.05 || particle.radius <= 0.5) {
-              particles.splice(i, 1);
-            }
-          }
+          this.x += this.velocity.x;
+          this.y += this.velocity.y;
+          this.alpha -= 0.01; // Fade out faster for subtler effect
         }
+      }
 
-        // Trigger explosions at random intervals within the canvas (which is now the celebratory section)
-        function triggerRandomExplosions() {
-          const x = Math.random() * canvas.width;
-          const y = Math.random() * canvas.height; // Explode anywhere within the section
-          createExplosion(x, y, 80); // Increased particle count for each explosion
-
-          // Schedule next explosion
-          const delay = Math.random() * 1000 + 300; // Faster intervals (0.3 to 1.3 seconds)
-          setTimeout(triggerRandomExplosions, delay);
+      // Function to create an explosion
+      function createExplosion(x, y, particleCount = 50) {
+        // Reduced particle count for subtlety
+        for (let i = 0; i < particleCount; i++) {
+          const color = colors[Math.floor(Math.random() * colors.length)];
+          particles.push(new Particle(x, y, color));
         }
+      }
 
-        // Start animation and explosions
-        animate();
-        triggerRandomExplosions();
-      });
-    </script>
-  </body>
+      // Trigger explosions at random intervals within the canvas
+      function triggerRandomExplosions() {
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height;
+        createExplosion(x, y, 40); // Further reduced particles per explosion
+
+        const delay = Math.random() * 1500 + 500; // Slower intervals (0.5 to 2 seconds)
+        setTimeout(triggerRandomExplosions, delay);
+      }
+
+      // Start animation and explosions
+      animate();
+      triggerRandomExplosions();
+    });
+  </script>
+</body>
+
 </html>
